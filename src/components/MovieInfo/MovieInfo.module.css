@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  gap: 40px;
+  padding: 32px 0;
+  border-bottom: 1px solid #978f8f;
+}
+.image {
+  width: 300px;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+p {
+  margin-top: 16px;
+  font-family: "Montserrat-Regular";
+}
