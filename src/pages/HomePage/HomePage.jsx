@@ -28,7 +28,7 @@ export default function HomePage() {
   }, []);
     return (
         <section className={css.container}>
-            <h1>Trending today</h1>
+            <h1 className={css.title}>Trending today</h1>
             {movies.length > 0 && <MovieList movies={movies} />}
             {isLoading && <Loader/>}
             {isError && <p>No data to display... Try again...</p>}

@@ -5,7 +5,6 @@ import Loader from "../../components/Loader/Loader";
 import MovieInfo from "../../components/MovieInfo/MovieInfo";
 import { GoBackBtn } from "../../components/GoBackBtn/GoBackBtn";
 import css from './MovieDetailsPage.module.css'
-import MovieCast from "../../components/MovieCast/MovieCast";
 
 export default function MovieDetailsPage() {
     const {
@@ -30,7 +29,7 @@ export default function MovieDetailsPage() {
       }
     };
     asyncWrapper();
-  }, []);
+  }, [movieId]);
     return (
         <div className={css.container}>
             <GoBackBtn/>

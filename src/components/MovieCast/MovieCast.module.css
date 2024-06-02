@@ -1,0 +1,21 @@
+.image {
+  width: 220px;
+  margin-bottom: 10px;
+  height: 300px;
+  object-fit: cover;
+}
+.container {
+  padding: 32px;
+}
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.item {
+  width: 260px;
+  box-shadow: 0 2px 4px #494949;
+  padding: 20px;
+  text-align: center;
+  border-radius: 4px;
+}

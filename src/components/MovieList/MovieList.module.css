@@ -4,3 +4,8 @@
 .item a:hover {
   color: orangered;
 }
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}

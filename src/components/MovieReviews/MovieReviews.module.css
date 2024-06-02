@@ -1,0 +1,14 @@
+.container {
+  padding: 32px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.item {
+  box-shadow: 0 2px 4px #494949;
+  padding: 16px 32px;
+  border-radius: 4px;
+}

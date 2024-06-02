@@ -1,7 +1,7 @@
 import css from './MovieInfo.module.css'
 
-export default function MovieInfo({ movie }) {  
-
+export default function MovieInfo({ movie }) {
+    
     return (
         <div className={css.container}>
             <img className={css.image} src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />

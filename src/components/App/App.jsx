@@ -29,7 +29,7 @@ export default function App() {
       <Suspense fallback={<div>Loading page...</div>}>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          {/* <Route path="/movies" element={<MoviesPage />} /> */}
+          <Route path="/movies" element={<MoviesPage />} />
           <Route path="/movies/:movieId" element={<MovieDetailsPage />}>
             <Route path="cast" element={<MovieCast/>}/>
             <Route path="reviews" element={<MovieReviews/>} />
