@@ -1,0 +1,16 @@
+.btn {
+  background-color: orangered;
+  color: #fff;
+  width: 140px;
+  height: 40px;
+  margin: 16px auto;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: red;
+}

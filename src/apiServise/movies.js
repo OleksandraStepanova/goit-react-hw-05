@@ -31,7 +31,7 @@ export const getMovieReviews = async (id) => {
   const { data } = await axios.get(`movie/${id}/reviews?language=en-US&page=1`, options);
   return data;
 };
-export const getMovieParams = async (query) => {
-  const { data } = await axios.get(`search/movie?${query}&include_adult=false&language=en-US&page=1`, options);
-  return data.results;
+export const getMovieParams = async (query, page) => {
+  const { data } = await axios.get(`search/movie?${query}&include_adult=false&language=en-US&page=${page}`, options);
+  return data;
 };
