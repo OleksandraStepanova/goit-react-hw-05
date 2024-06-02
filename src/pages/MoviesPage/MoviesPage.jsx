@@ -8,8 +8,8 @@ import LoadMoreBtn from '../../components/LoadMoreBtn/LoadMoreBtn';
 import css from './MoviesPage.module.css'
 
 export default function MoviesPage() {
-    const [params, setParams] = useSearchParams();
-      const [isError, setIsError] = useState(false);
+  const [params, setParams] = useSearchParams();
+  const [isError, setIsError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [movies, setMovies] = useState([]);
   const [page, setPage] = useState(1);
@@ -24,7 +24,7 @@ export default function MoviesPage() {
             return;
         }
         setParams({
-            query:e.target.search.value.trim().toLowerCase(),
+            query: e.target.search.value.trim().toLowerCase(),
         });
       e.target.reset();
       setPage(1);
@@ -54,15 +54,15 @@ export default function MoviesPage() {
      setPage(page + 1); 
   }
 
-    
     return (
         <section className={css.container}>
             <form className={css.form} onSubmit={handleSubmit}>
                 <input className={css.input} type="text" name='search' />
                 <button className={css.btn}>Search</button>
         </form>
-        <Toaster/>
-        {movies.length > 0 ? <MovieList movies={movies} />:<p>No movies for this request...</p>}
+        <Toaster />
+        {movies.length < 1 && params.size===1 &&<p>We don`t have any movies for this request...</p>}
+        {movies.length > 0 ? <MovieList movies={movies}/> : <p>Enter a new request!</p>}        
         {movies.length > 0 && total > page && <LoadMoreBtn onClick={handleLoadMore} />}
             {isLoading && <Loader/>}
             {isError && <p>No data to display... Try again...</p>}
