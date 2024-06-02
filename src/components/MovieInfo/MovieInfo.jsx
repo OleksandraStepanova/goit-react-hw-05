@@ -8,7 +8,7 @@ export default function MovieInfo({ movie }) {
             <div className={css.wrapper}>
                 <h1>{movie.title}</h1>
                 <div>
-                    <p>User Score: {movie.vote_average*10}%</p>
+                    <p>User Score: {Math.round(movie.vote_average*10)}%</p>
                 </div>
                 <div>
                     <h2>Overview:</h2>
