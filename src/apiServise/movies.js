@@ -11,7 +11,6 @@ const options = {
 
 axios.defaults.params = {
     orientation: 'landscape',
-    per_page: 20,
 }
 
 export const getMovies = async () => {
@@ -27,8 +26,8 @@ export const getMovieCredits = async (id) => {
   const { data } = await axios.get(`movie/${id}/credits?language=en-US`, options);
   return data;
 };
-export const getMovieReviews = async (id) => {
-  const { data } = await axios.get(`movie/${id}/reviews?language=en-US&page=1`, options);
+export const getMovieReviews = async (id, page) => {
+  const { data } = await axios.get(`movie/${id}/reviews?language=en-US&page=${page}`, options);
   return data;
 };
 export const getMovieParams = async (query, page) => {
