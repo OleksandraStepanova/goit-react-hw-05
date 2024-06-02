@@ -14,7 +14,7 @@ export default function MoviesPage() {
     const handleSubmit = (e )=> {
         e.preventDefault();
         setParams({
-            query:e.target.search.value.trim(),
+            query:e.target.search.value.trim().toLowerCase(),
         });
         e.target.reset();        
     }
