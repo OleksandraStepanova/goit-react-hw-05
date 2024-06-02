@@ -1,10 +1,11 @@
 import { useSearchParams } from 'react-router-dom';
-import css from './MoviesPage.module.css'
 import MovieList from '../../components/MovieList/MovieList';
 import { useEffect, useState } from 'react';
-import { getMovieParams} from '../../apiServise/movies';
+import { getMovieParams } from '../../apiServise/movies';
+import toast, { Toaster } from 'react-hot-toast';
 import Loader from '../../components/Loader/Loader';
 import LoadMoreBtn from '../../components/LoadMoreBtn/LoadMoreBtn';
+import css from './MoviesPage.module.css'
 
 export default function MoviesPage() {
     const [params, setParams] = useSearchParams();
@@ -16,7 +17,12 @@ export default function MoviesPage() {
   
 
     const handleSubmit = (e )=> {
-        e.preventDefault();
+      e.preventDefault();
+      if (e.target.search.value.trim()==='') {            
+        toast.error('Enter your query!');
+        setParams({})
+            return;
+        }
         setParams({
             query:e.target.search.value.trim().toLowerCase(),
         });
@@ -54,8 +60,9 @@ export default function MoviesPage() {
             <form className={css.form} onSubmit={handleSubmit}>
                 <input className={css.input} type="text" name='search' />
                 <button className={css.btn}>Search</button>
-            </form>
-        {movies.length > 0 && <MovieList movies={movies} />}
+        </form>
+        <Toaster/>
+        {movies.length > 0 ? <MovieList movies={movies} />:<p>No movies for this request...</p>}
         {movies.length > 0 && total > page && <LoadMoreBtn onClick={handleLoadMore} />}
             {isLoading && <Loader/>}
             {isError && <p>No data to display... Try again...</p>}
