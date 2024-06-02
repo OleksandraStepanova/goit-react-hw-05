@@ -61,9 +61,10 @@ export default function MoviesPage() {
                 <button className={css.btn}>Search</button>
         </form>
         <Toaster />
-        {movies.length < 1 && params.size===1 &&<p>We don`t have any movies for this request...</p>}
+        
         {movies.length > 0 ? <MovieList movies={movies}/> : <p>Enter a new request!</p>}        
         {movies.length > 0 && total > page && <LoadMoreBtn onClick={handleLoadMore} />}
+        {movies.length < 1 && params.size===1 &&<p>We have no movies for this request...</p>}
             {isLoading && <Loader/>}
             {isError && <p>No data to display... Try again...</p>}
         </section>
