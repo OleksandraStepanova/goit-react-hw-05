@@ -39,7 +39,7 @@ export default function MovieCast() {
         }
 
     return (
-        <div className={css.container}>
+        <div ref={castRef} className={css.container}>
             {movie.cast !== undefined && <ul className={css.list}>{movie.cast.map(actor => <li ref={castRef} className={css.item} key={actor.id}>
                 <img className={css.image} src={`https://image.tmdb.org/t/p/w500${actor.profile_path}`} alt={actor.name} />
                 <h2>{actor.name}</h2>
