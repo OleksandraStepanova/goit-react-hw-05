@@ -23,7 +23,9 @@ export default function MovieReviews() {
         setIsLoading(true);
         setIsError(false);
         const results = await getMovieReviews(movieId, page);
-        setMovie(results.results);
+        setMovie(prevState => {
+          return [...prevState, ...results.results];
+        });
         setTotal(results.total_pages);
       } catch (error) {
         setIsError(true);
